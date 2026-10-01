@@ -135,3 +135,4 @@ npx cap open android  # opens Android Studio
 
 The Laravel backend handles categories, products, orders, discount codes, WhatsApp message logging and an admin panel.  
 See [backend/README.md](backend/README.md) and [backend/API_INTEGRATION.md](backend/API_INTEGRATION.md) for full setup instructions.
+# bola-cake-shop
