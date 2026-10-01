@@ -10,15 +10,15 @@ export const FilterModal = ({ filterCriteria, setFilterCriteria, dismiss, filter
   };
 
   return (
-    <IonContent style={{ '--background': '#111111' }}>
+    <IonContent style={{ '--background': '#FBF8F5' }}>
       <div style={{ padding: '1rem 1.25rem' }}>
         <p
           style={{
-            fontFamily: "'Jost', sans-serif",
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontSize: '0.6rem',
             letterSpacing: '0.25em',
             textTransform: 'uppercase',
-            color: '#C9A96E',
+            color: '#5A2A38',
             margin: '0 0 1rem',
           }}
         >
@@ -28,19 +28,17 @@ export const FilterModal = ({ filterCriteria, setFilterCriteria, dismiss, filter
           {filters.map((f) => (
             <button
               key={f}
+              type="button"
+              className={`sucre-btn sucre-btn-chip${filterCriteria === f ? ' is-active' : ''}`}
               onClick={() => filterProducts(f)}
               style={{
-                background: filterCriteria === f ? '#C9A96E' : '#1E1E1E',
-                color: filterCriteria === f ? '#0C0C0C' : '#7A7A7A',
-                border: filterCriteria === f ? '1px solid #C9A96E' : '1px solid #2A2A2A',
-                borderRadius: '2px',
+                borderRadius: '8px',
                 padding: '7px 16px',
                 fontSize: '0.68rem',
                 fontWeight: 600,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                cursor: 'pointer',
-                fontFamily: "'Jost', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
               {t(`filters.${f}`, null, f)}

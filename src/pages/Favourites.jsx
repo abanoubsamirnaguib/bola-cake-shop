@@ -38,14 +38,14 @@ const Favourites = () => {
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
-        <IonToolbar style={{ '--background': '#0C0C0C', '--border-color': 'transparent' }}>
+        <IonToolbar style={{ '--background': '#FBF8F5', '--border-color': 'transparent' }}>
           <IonTitle
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontWeight: 300,
               fontSize: '1.4rem',
               letterSpacing: '0.25em',
-              color: '#C9A96E',
+              color: '#5A2A38',
               textAlign: 'center',
               textTransform: 'uppercase',
             }}
@@ -60,7 +60,7 @@ const Favourites = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen style={{ '--background': '#0C0C0C' }}>
+      <IonContent fullscreen style={{ '--background': '#FBF8F5' }}>
 
         {/* ── Empty State ── */}
         {favourites.length === 0 && (
@@ -76,13 +76,13 @@ const Favourites = () => {
           >
             <IonIcon
               icon={heartOutline}
-              style={{ color: '#2A2A2A', fontSize: '4rem' }}
+              style={{ color: '#EFE7E1', fontSize: '4rem' }}
             />
             <h2
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontWeight: 300,
-                color: '#3A3A3A',
+                color: '#78676B',
                 margin: 0,
                 fontSize: '1.75rem',
               }}
@@ -91,7 +91,7 @@ const Favourites = () => {
             </h2>
             <p
               style={{
-                color: '#4A4A4A',
+                color: '#A0908A',
                 fontSize: '0.8rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.15em',
@@ -134,13 +134,14 @@ const Favourites = () => {
                   >
                     <div
                       style={{
-                        background: '#151515',
-                        border: '1px solid #2A2A2A',
-                        borderRadius: '4px',
+                        background: '#FFFFFF',
+                        border: '1px solid #EFE7E1',
+                        borderRadius: '12px',
                         overflow: 'hidden',
+                        boxShadow: '0 4px 16px -4px rgba(90, 42, 56, 0.06)',
                       }}
                     >
-                      <div style={{ position: 'relative', height: '200px' }}>
+                      <div style={{ position: 'relative', height: '200px', background: '#F5EFEB' }}>
                         <img
                           src={displayImage}
                           alt={product.title}
@@ -149,7 +150,7 @@ const Favourites = () => {
                           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                         {hasDiscount(product) && (
-                          <span style={{ position: 'absolute', top: '8px', left: '8px', background: '#C9A96E', color: '#0C0C0C', fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.08em', padding: '3px 6px', borderRadius: '2px' }}>
+                          <span style={{ position: 'absolute', top: '8px', left: '8px', background: '#FECAA2', color: '#795334', fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.08em', padding: '3px 6px', borderRadius: '4px' }}>
                             -{Math.round(product.discount)}%
                           </span>
                         )}
@@ -158,7 +159,7 @@ const Favourites = () => {
                             position: 'absolute',
                             top: '8px',
                             right: '8px',
-                            color: '#CF6679',
+                            color: '#5A2A38',
                             fontSize: '1.1rem',
                           }}
                         >
@@ -168,9 +169,10 @@ const Favourites = () => {
                       <div style={{ padding: '0.6rem 0.75rem 0.75rem' }}>
                         <p
                           style={{
-                            fontFamily: "'Cormorant Garamond', serif",
+                            fontFamily: "'Playfair Display', serif",
                             fontSize: '0.9rem',
-                            color: '#F5F0E8',
+                            color: '#401523',
+                            fontWeight: 500,
                             margin: 0,
                             marginBottom: '3px',
                             lineHeight: 1.2,
@@ -183,11 +185,11 @@ const Favourites = () => {
                         </p>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                           {hasDiscount(product) && (
-                            <p style={{ color: '#EF4444', fontSize: '0.75rem', fontWeight: 700, margin: 0, textDecoration: 'line-through' }}>
+                            <p style={{ color: '#D5C2C5', fontSize: '0.75rem', fontWeight: 500, margin: 0, textDecoration: 'line-through' }}>
                               {getOriginalPrice(product)}
                             </p>
                           )}
-                          <p style={{ color: '#C9A96E', fontSize: '0.85rem', fontWeight: 500, margin: 0 }}>
+                          <p style={{ color: '#5A2A38', fontSize: '0.85rem', fontWeight: 700, margin: 0 }}>
                             {getDisplayPrice(product)}
                           </p>
                         </div>

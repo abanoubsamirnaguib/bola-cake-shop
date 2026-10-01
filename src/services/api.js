@@ -1,5 +1,5 @@
 /**
- * API service for the Anfas backend.
+ * API service for the Sucre backend.
  */
 
 import { API_BASE_URL } from '../config';
@@ -108,7 +108,7 @@ export async function validateDiscountCode(code, amount) {
 
 /**
  * Fetch all public settings as a key→value map.
- * e.g. { whatsapp_phone: '201068644570', shop_name: 'Anfas' }
+ * e.g. { whatsapp_phone: '201068644570', shop_name: 'Sucre' }
  */
 export async function fetchSettings() {
   return apiFetch('/settings');

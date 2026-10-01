@@ -24,9 +24,9 @@ import { LanguageToggle } from '../components/LanguageToggle';
 const StarRating = ({ rating }) => {
   const stars = Math.round(rating);
   return (
-    <span style={{ color: '#C9A96E', fontSize: '0.7rem', letterSpacing: '1px' }}>
+    <span style={{ color: '#C99A75', fontSize: '0.7rem', letterSpacing: '1px' }}>
       {'★'.repeat(stars)}{'☆'.repeat(5 - stars)}
-      <span style={{ color: '#7A7A7A', marginLeft: '4px' }}>{rating}</span>
+      <span style={{ color: '#78676B', marginLeft: '4px' }}>{rating}</span>
     </span>
   );
 };
@@ -166,19 +166,19 @@ const ProductType = () => {
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
-        <IonToolbar style={{ '--background': '#0C0C0C', '--border-color': 'transparent' }}>
+        <IonToolbar style={{ '--background': '#FBF8F5', '--border-color': 'transparent' }}>
           <IonButtons slot="start">
-            <IonButton onClick={() => router.goBack()} style={{ '--color': '#C9A96E' }}>
+            <IonButton onClick={() => router.goBack()} style={{ '--color': '#5A2A38', '--color-hover': '#401523', '--background-hover': 'rgba(232, 190, 183, 0.22)', '--background-activated': 'rgba(232, 190, 183, 0.32)', '--ripple-color': 'rgba(90, 42, 56, 0.1)' }}>
               <IonIcon icon={chevronBack} />
             </IonButton>
           </IonButtons>
           <IonTitle
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontWeight: 300,
               fontSize: '1rem',
               letterSpacing: '0.25em',
-              color: '#F5F0E8',
+              color: '#5A2A38',
               textTransform: 'uppercase',
             }}
           >
@@ -189,7 +189,7 @@ const ProductType = () => {
           <IonButtons slot="end">
             <LanguageToggle />
             {!notFound && (
-              <IonButton onClick={openModal} style={{ '--color': '#C9A96E' }}>
+              <IonButton onClick={openModal} style={{ '--color': '#5A2A38', '--color-hover': '#401523', '--background-hover': 'rgba(232, 190, 183, 0.22)', '--background-activated': 'rgba(232, 190, 183, 0.32)', '--ripple-color': 'rgba(90, 42, 56, 0.1)' }}>
                 <IonIcon icon={optionsOutline} />
               </IonButton>
             )}
@@ -197,17 +197,17 @@ const ProductType = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen style={{ '--background': '#0C0C0C' }}>
+      <IonContent fullscreen style={{ '--background': '#FBF8F5' }}>
 
         {notFound ? (
           <div style={{ padding: '2.5rem 1.25rem' }}>
             <p className="section-label" style={{ margin: 0, marginBottom: '0.5rem' }}>{t('productType.notFoundLabel')}</p>
             <h1
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontWeight: 300,
                 fontSize: '1.8rem',
-                color: '#F5F0E8',
+                color: '#241419',
                 margin: 0,
               }}
             >
@@ -225,10 +225,10 @@ const ProductType = () => {
             placeholder={searchPlaceholder}
             onIonChange={(e) => performSearch(e)}
             style={{
-              '--background': '#1E1E1E',
-              '--color': '#F5F0E8',
-              '--placeholder-color': '#7A7A7A',
-              '--icon-color': '#C9A96E',
+              '--background': '#F4ECE7',
+              '--color': '#241419',
+              '--placeholder-color': '#78676B',
+              '--icon-color': '#5A2A38',
               '--border-radius': '4px',
               '--box-shadow': 'none',
               padding: 0,
@@ -249,20 +249,18 @@ const ProductType = () => {
           {filters.map((f) => (
             <button
               key={f}
+              type="button"
+              className={`sucre-btn sucre-btn-chip${activeFilter === f ? ' is-active' : ''}`}
               onClick={() => applyFilter(f)}
               style={{
-                background: activeFilter === f ? '#C9A96E' : '#1E1E1E',
-                color: activeFilter === f ? '#0C0C0C' : '#7A7A7A',
-                border: activeFilter === f ? '1px solid #C9A96E' : '1px solid #2A2A2A',
-                borderRadius: '2px',
-                padding: '4px 12px',
+                borderRadius: '8px',
+                padding: '6px 14px',
                 fontSize: '0.65rem',
                 fontWeight: 600,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
-                cursor: 'pointer',
                 whiteSpace: 'nowrap',
-                fontFamily: "'Jost', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
               }}
             >
               {t(`filters.${f}`, null, f)}
@@ -270,7 +268,7 @@ const ProductType = () => {
           ))}
         </div>
 
-        {/* ── Gold Divider ── */}
+        {/* ── Divider ── */}
         <div className="bellezza-divider" style={{ margin: '0.25rem 1rem 0.75rem' }} />
 
         {/* ── Product Grid ── */}
@@ -284,11 +282,11 @@ const ProductType = () => {
             }}
           >
             {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} style={{ background: '#151515', border: '1px solid #2A2A2A', borderRadius: '4px', overflow: 'hidden' }}>
-                <div style={{ height: '200px', background: 'linear-gradient(90deg, #1a1a1a 25%, #252525 50%, #1a1a1a 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
+              <div key={i} style={{ background: '#FFFFFF', border: '1px solid #EFE7E1', borderRadius: '12px', overflow: 'hidden' }}>
+                <div style={{ height: '200px', background: 'linear-gradient(90deg, #EFE7E1 25%, #EAE1DB 50%, #EFE7E1 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
                 <div style={{ padding: '0.6rem 0.75rem 0.75rem' }}>
-                  <div style={{ height: '12px', background: '#2A2A2A', borderRadius: '2px', marginBottom: '8px', width: '80%' }} />
-                  <div style={{ height: '10px', background: '#2A2A2A', borderRadius: '2px', width: '50%' }} />
+                  <div style={{ height: '12px', background: '#EFE7E1', borderRadius: '2px', marginBottom: '8px', width: '80%' }} />
+                  <div style={{ height: '10px', background: '#EFE7E1', borderRadius: '2px', width: '50%' }} />
                 </div>
               </div>
             ))}
@@ -305,8 +303,8 @@ const ProductType = () => {
           }}
         >
           {filteredProducts.length === 0 && (
-            <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '3rem 1rem', color: '#4A4A4A' }}>
-              <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.2rem', margin: 0 }}>{t('productType.noProducts')}</p>
+            <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '3rem 1rem', color: '#A0908A' }}>
+              <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.2rem', margin: 0 }}>{t('productType.noProducts')}</p>
             </div>
           )}
           {filteredProducts.map((product, index) => {
@@ -319,13 +317,14 @@ const ProductType = () => {
               >
                 <div
                   style={{
-                    background: '#151515',
-                    border: '1px solid #2A2A2A',
-                    borderRadius: '4px',
+                    background: '#FFFFFF',
+                    border: '1px solid #EFE7E1',
+                    borderRadius: '12px',
                     overflow: 'hidden',
+                    boxShadow: '0 4px 16px -4px rgba(90, 42, 56, 0.06)',
                   }}
                 >
-                  <div style={{ position: 'relative', height: '200px' }}>
+                  <div style={{ position: 'relative', height: '200px', background: '#F5EFEB' }}>
                     <img
                       src={product.image}
                       alt={product.title}
@@ -334,7 +333,7 @@ const ProductType = () => {
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                     {hasDiscount(product) && (
-                      <span style={{ position: 'absolute', top: '8px', right: '8px', background: '#C9A96E', color: '#0C0C0C', fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.08em', padding: '3px 6px', borderRadius: '2px' }}>
+                      <span style={{ position: 'absolute', top: '8px', right: '8px', background: '#FECAA2', color: '#795334', fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.08em', padding: '3px 6px', borderRadius: '4px' }}>
                         -{Math.round(product.discount)}%
                       </span>
                     )}
@@ -342,9 +341,10 @@ const ProductType = () => {
                   <div style={{ padding: '0.6rem 0.75rem 0.75rem' }}>
                     <p
                       style={{
-                        fontFamily: "'Cormorant Garamond', serif",
+                        fontFamily: "'Playfair Display', serif",
                         fontSize: '0.9rem',
-                        color: '#F5F0E8',
+                        color: '#401523',
+                        fontWeight: 500,
                         margin: 0,
                         marginBottom: '3px',
                         lineHeight: 1.2,
@@ -358,11 +358,11 @@ const ProductType = () => {
                     {product.reviews && <StarRating rating={product.reviews} />}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '4px 0 0' }}>
                       {hasDiscount(product) && (
-                        <p style={{ color: '#EF4444', fontSize: '0.75rem', fontWeight: 700, margin: 0, textDecoration: 'line-through' }}>
+                        <p style={{ color: '#D5C2C5', fontSize: '0.75rem', fontWeight: 500, margin: 0, textDecoration: 'line-through' }}>
                           {getOriginalPrice(product)}
                         </p>
                       )}
-                      <p style={{ color: '#C9A96E', fontSize: '0.85rem', fontWeight: 500, margin: 0 }}>
+                      <p style={{ color: '#5A2A38', fontSize: '0.85rem', fontWeight: 700, margin: 0 }}>
                         {getDisplayPrice(product)}
                       </p>
                     </div>

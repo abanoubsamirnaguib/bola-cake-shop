@@ -1,7 +1,7 @@
 /* Bellezza Product Modal – minimal dark overrides */
 
 ion-modal {
-  --background: #0C0C0C;
+  --background: #FBF8F5;
 }
 
 /* Hide scrollbar in the product image gallery strip */
@@ -19,6 +19,6 @@ ion-accordion-group {
 
 ion-accordion {
   background: transparent;
-  --border-color: #2A2A2A;
+  --border-color: #EFE7E1;
   margin-bottom: 4px;
 }

@@ -1,6 +1,6 @@
 {
-  "short_name": "Anfas",
-  "name": "Anfas",
+  "short_name": "Sucre",
+  "name": "Sucre Pâtisserie",
   "icons": [
     {
       "src": "assets/icon/favicon.ico",
@@ -29,6 +29,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "theme_color": "#FBF8F5",
+  "background_color": "#FBF8F5"
 }

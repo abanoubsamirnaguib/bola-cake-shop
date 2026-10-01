@@ -76,9 +76,11 @@ const App = () => {
 
           <IonTabBar slot="bottom"
             style={{
-              '--background': '#111111',
+              '--background': 'rgba(251, 248, 245, 0.92)',
               '--border': 'none',
-              borderTop: '1px solid #2A2A2A',
+              borderTop: '1px solid #E8BEB7',
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
             }}
           >
             {pages.map((page, index) => {

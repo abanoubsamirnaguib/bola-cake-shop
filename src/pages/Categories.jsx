@@ -24,15 +24,15 @@ const SkeletonCard = () => (
       minWidth: '160px',
       borderRadius: '4px',
       overflow: 'hidden',
-      background: '#151515',
-      border: '1px solid #2A2A2A',
+      background: '#FFFFFF',
+      border: '1px solid #EFE7E1',
       flexShrink: 0,
     }}
   >
     <div
       style={{
         height: 200,
-        background: 'linear-gradient(90deg, #1a1a1a 25%, #252525 50%, #1a1a1a 75%)',
+        background: 'linear-gradient(90deg, #EFE7E1 25%, #EAE1DB 50%, #EFE7E1 75%)',
         backgroundSize: '200% 100%',
         animation: 'shimmer 1.4s infinite',
       }}
@@ -168,24 +168,21 @@ const Categories = () => {
   return (
     <IonPage>
       <IonHeader className="ion-no-border">
-        <IonToolbar style={{ '--background': '#0C0C0C', '--border-color': 'transparent', '--min-height': '80px', height: '80px' }}>
+        <IonToolbar style={{ '--background': 'rgba(251, 248, 245, 0.92)', '--border-color': 'transparent', '--min-height': '64px', height: '64px' }}>
           <IonTitle
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontWeight: 300,
-              fontSize: '1.6rem',
-              letterSpacing: '0.25em',
-              color: '#C9A96E',
+              fontFamily: "'Playfair Display', serif",
+              fontWeight: 500,
+              fontSize: '1.2rem',
+              letterSpacing: '0.18em',
+              color: '#5A2A38',
               textAlign: 'center',
               textTransform: 'uppercase',
             }}
           >
             <div onClick={() => document.getElementById('hero-section')?.scrollIntoView({ behavior: 'smooth' })} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.15rem', cursor: 'pointer' }}>
-                <img src="/assets/perfume/anfas.png" alt="logo" style={{ height: '70px', width: 'auto', objectFit: 'contain', borderRadius: '4px', clipPath: 'inset(0 0 8px 0)' }} referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = FALLBACK_IMG; }} />
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', transform: 'translateY(-10px)' }}>
-                  <h1 style={{ fontSize: '0.7rem', fontWeight: 900, letterSpacing: '0.12em', color: '#fff', lineHeight: 1, margin: 0, padding: 0 }}> ANFAS | أنــفــاس </h1>
-                </div>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.1rem', cursor: 'pointer' }}>
+                <img src="/assets/pastry/logo.svg" alt="Sucre Pâtisserie" style={{ height: '42px', width: 'auto', objectFit: 'contain' }} referrerPolicy="no-referrer" onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/assets/pastry/logo.png'; }} />
               </div>
             </div>
           </IonTitle>
@@ -195,7 +192,7 @@ const Categories = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen style={{ '--background': '#0C0C0C' }}>
+      <IonContent fullscreen style={{ '--background': '#FBF8F5' }}>
 
         {/* ── Landing Slider (admin-managed banner slides) ── */}
         <div
@@ -204,14 +201,15 @@ const Categories = () => {
             position: 'relative',
             width: '100%',
             overflow: 'hidden',
-            background: '#0C0C0C',
-            aspectRatio: '16 / 7',
-            minHeight: 180,
+            background: '#FBF8F5',
+            aspectRatio: '4 / 3',
+            minHeight: 220,
+            maxHeight: 380,
           }}
         >
           {/* Skeleton */}
           {bannerLoading && (
-            <div style={{ width: '100%', height: '100%', background: 'linear-gradient(90deg, #1a1a1a 25%, #252525 50%, #1a1a1a 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
+            <div style={{ width: '100%', height: '100%', background: 'linear-gradient(90deg, #EFE7E1 25%, #EAE1DB 50%, #EFE7E1 75%)', backgroundSize: '200% 100%', animation: 'shimmer 1.4s infinite' }} />
           )}
 
           {/* Slides */}
@@ -252,7 +250,7 @@ const Categories = () => {
                     style={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%)',
+                      background: 'linear-gradient(to top, rgba(64,21,35,0.72) 0%, transparent 60%)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'flex-end',
@@ -260,12 +258,12 @@ const Categories = () => {
                     }}
                   >
                     {slideSubtitle && (
-                      <p style={{ fontFamily: "'Jost', sans-serif", fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A96E', margin: 0, marginBottom: 4 }}>
+                      <p style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.65rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#FECAA2', margin: 0, marginBottom: 4 }}>
                         {slideSubtitle}
                       </p>
                     )}
                     {slideTitle && (
-                      <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: 'clamp(1.4rem, 5vw, 2.2rem)', color: '#F5F0E8', margin: 0, letterSpacing: '0.08em' }}>
+                      <h1 style={{ fontFamily: "'Playfair Display', serif", fontWeight: 500, fontSize: 'clamp(1.4rem, 5vw, 2.2rem)', color: '#FBF8F5', margin: 0, letterSpacing: '0.08em' }}>
                         {slideTitle}
                       </h1>
                     )}
@@ -317,7 +315,7 @@ const Categories = () => {
                     width: idx === activeSlide ? 20 : 6,
                     height: 6,
                     borderRadius: 3,
-                    background: idx === activeSlide ? '#C9A96E' : 'rgba(255,255,255,0.35)',
+                    background: idx === activeSlide ? '#FECAA2' : 'rgba(251,248,245,0.45)',
                     border: 'none',
                     padding: 0,
                     cursor: 'pointer',
@@ -358,10 +356,11 @@ const Categories = () => {
                       <div
                         style={{
                           minWidth: '160px',
-                          borderRadius: '4px',
+                          borderRadius: '12px',
                           overflow: 'hidden',
-                          background: '#151515',
-                          border: '1px solid #2A2A2A',
+                          background: '#FFFFFF',
+                          border: '1px solid #EFE7E1',
+                          boxShadow: '0 4px 16px -4px rgba(90, 42, 56, 0.06)',
                           flexShrink: 0,
                         }}
                       >
@@ -379,13 +378,13 @@ const Categories = () => {
                                 position: 'absolute',
                                 top: '8px',
                                 right: '8px',
-                                background: '#C9A96E',
-                                color: '#0C0C0C',
+                                background: '#FECAA2',
+                                color: '#795334',
                                 fontSize: '0.55rem',
                                 fontWeight: 700,
                                 letterSpacing: '0.08em',
                                 padding: '3px 6px',
-                                borderRadius: '2px',
+                                borderRadius: '4px',
                               }}
                             >
                               -{Math.round(product.discount)}%
@@ -396,14 +395,14 @@ const Categories = () => {
                                 position: 'absolute',
                                 top: '8px',
                                 left: '8px',
-                                background: '#C9A96E',
-                                color: '#0C0C0C',
+                                background: '#5A2A38',
+                                color: '#FBF8F5',
                                 fontSize: '0.55rem',
                                 fontWeight: 600,
                                 letterSpacing: '0.12em',
                                 textTransform: 'uppercase',
                                 padding: '3px 7px',
-                                borderRadius: '2px',
+                                borderRadius: '4px',
                               }}
                             >
                               {t('featured.bestSeller')}
@@ -413,9 +412,10 @@ const Categories = () => {
                         <div style={{ padding: '0.6rem 0.75rem' }}>
                           <p
                             style={{
-                              fontFamily: "'Cormorant Garamond', serif",
+                              fontFamily: "'Playfair Display', serif",
                               fontSize: '0.95rem',
-                              color: '#F5F0E8',
+                              color: '#401523',
+                              fontWeight: 500,
                               margin: 0,
                               marginBottom: '2px',
                               whiteSpace: 'nowrap',
@@ -427,7 +427,7 @@ const Categories = () => {
                             {product.title}
                           </p>
                           {(language === 'ar' ? (product.description_ar || product.description) : product.description) && (
-                            <p style={{ fontSize: '0.65rem', color: '#7A7A7A', margin: '0 0 4px', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                            <p style={{ fontSize: '0.65rem', color: '#78676B', margin: '0 0 4px', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                               {language === 'ar' ? (product.description_ar || product.description) : product.description}
                             </p>
                           )}
@@ -436,8 +436,8 @@ const Categories = () => {
                               <p
                                 style={{
                                   fontSize: '0.7rem',
-                                  color: '#EF4444',
-                                  fontWeight: 700,
+                                  color: '#D5C2C5',
+                                  fontWeight: 500,
                                   margin: 0,
                                   textDecoration: 'line-through',
                                 }}
@@ -448,7 +448,8 @@ const Categories = () => {
                             <p
                               style={{
                                 fontSize: '0.75rem',
-                                color: '#C9A96E',
+                                color: '#5A2A38',
+                                fontWeight: 700,
                                 margin: 0,
                               }}
                             >
@@ -479,7 +480,7 @@ const Categories = () => {
                 borderRadius: '4px',
                 overflow: 'hidden',
                 height: '160px',
-                background: 'linear-gradient(90deg, #1a1a1a 25%, #252525 50%, #1a1a1a 75%)',
+                background: 'linear-gradient(90deg, #EFE7E1 25%, #EAE1DB 50%, #EFE7E1 75%)',
                 backgroundSize: '200% 100%',
                 animation: 'shimmer 1.4s infinite',
               }}
@@ -518,7 +519,7 @@ const Categories = () => {
           <div
             style={{
               padding: '2rem 1.25rem 6rem',
-              borderTop: '1px solid #2A2A2A',
+              borderTop: '1px solid #EFE7E1',
               marginTop: '0.5rem',
             }}
           >
@@ -530,12 +531,12 @@ const Categories = () => {
               {t('aboutUs.title')}
             </p>
 
-            {/* Gold thin divider */}
+            {/* Rose-gold thin divider */}
             <div
               style={{
                 width: '40px',
                 height: '1px',
-                background: '#C9A96E',
+                background: '#C99A75',
                 marginBottom: '1rem',
               }}
             />
@@ -551,10 +552,10 @@ const Categories = () => {
                       : (siteSettings.about_us_description || siteSettings.about_us_description_ar || ''),
                 }}
                 style={{
-                  fontFamily: "'Jost', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontSize: '0.875rem',
                   lineHeight: 1.75,
-                  color: '#A89880',
+                  color: '#78676B',
                   marginBottom: '1.5rem',
                 }}
               />
@@ -571,7 +572,7 @@ const Categories = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     title="WhatsApp"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#1a1a1a', border: '1px solid #25D366', textDecoration: 'none' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#FFFFFF', border: '1px solid #25D366', textDecoration: 'none' }}
                   >
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="#25D366">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
@@ -584,9 +585,9 @@ const Categories = () => {
                   <a
                     href={`tel:${siteSettings.contact_phone}`}
                     title={t('aboutUs.call')}
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#1a1a1a', border: '1px solid #C9A96E', textDecoration: 'none' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#FFFFFF', border: '1px solid #5A2A38', textDecoration: 'none' }}
                   >
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#C9A96E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5A2A38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.09 6.09l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z" />
                     </svg>
                   </a>
@@ -597,7 +598,7 @@ const Categories = () => {
                   <a
                     href={`mailto:${siteSettings.contact_email}`}
                     title={t('aboutUs.email')}
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#1a1a1a', border: '1px solid #EA4335', textDecoration: 'none' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#FFFFFF', border: '1px solid #EA4335', textDecoration: 'none' }}
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#EA4335" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -609,7 +610,7 @@ const Categories = () => {
                 {/* Facebook */}
                 {siteSettings.social_facebook && (
                   <a href={siteSettings.social_facebook} target="_blank" rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#1a1a1a', border: '1px solid #4267B2' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#FFFFFF', border: '1px solid #4267B2' }}
                     title="Facebook"
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="#4267B2">
@@ -621,7 +622,7 @@ const Categories = () => {
                 {/* Instagram */}
                 {siteSettings.social_instagram && (
                   <a href={siteSettings.social_instagram} target="_blank" rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#1a1a1a', border: '1px solid #cc2366' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#FFFFFF', border: '1px solid #cc2366' }}
                     title="Instagram"
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="url(#igGrad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -644,10 +645,10 @@ const Categories = () => {
                 {/* TikTok */}
                 {siteSettings.social_tiktok && (
                   <a href={siteSettings.social_tiktok} target="_blank" rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#1a1a1a', border: '1px solid #69C9D0' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#FFFFFF', border: '1px solid #69C9D0' }}
                     title="TikTok"
                   >
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#F5F0E8">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="#241419">
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
                     </svg>
                   </a>
@@ -656,7 +657,7 @@ const Categories = () => {
                 {/* YouTube */}
                 {siteSettings.social_youtube && (
                   <a href={siteSettings.social_youtube} target="_blank" rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#1a1a1a', border: '1px solid #FF0000' }}
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: 40, height: 40, borderRadius: '50%', background: '#FFFFFF', border: '1px solid #FF0000' }}
                     title="YouTube"
                   >
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="#FF0000">

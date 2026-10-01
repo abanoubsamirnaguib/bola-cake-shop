@@ -69,7 +69,7 @@ const Product = () => {
 
   return (
     <IonPage>
-      <IonContent style={{ '--background': '#0C0C0C' }}>
+      <IonContent style={{ '--background': '#FBF8F5' }}>
         <div
           style={{
             display: 'flex',
@@ -80,9 +80,9 @@ const Product = () => {
         >
           {loading && <IonSpinner name="crescent" color="primary" />}
           {error && (
-            <div style={{ color: '#F5F0E8', textAlign: 'center', padding: '2rem' }}>
+            <div style={{ color: '#241419', textAlign: 'center', padding: '2rem' }}>
               <p>Error loading product</p>
-              <p style={{ fontSize: '0.9rem', color: '#7A7A7A' }}>{error}</p>
+              <p style={{ fontSize: '0.9rem', color: '#78676B' }}>{error}</p>
             </div>
           )}
         </div>

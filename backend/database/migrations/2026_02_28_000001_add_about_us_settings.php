@@ -12,7 +12,7 @@ return new class extends Migration
         $rows = [
             [
                 'key'        => 'about_us_description',
-                'value'      => '<p>Welcome to <strong>Anfas</strong> — a house of fine fragrances crafted with passion and precision. We believe every scent tells a story, and every bottle is a journey waiting to unfold.</p>',
+                'value'      => '<p>Welcome to <strong>Sucre Pâtisserie</strong> — a house of haute French-Arabian pastry. From couture celebration cakes to gold-foiled macaron boxes, every piece is crafted with artisanal precision.</p>',
                 'label'      => 'About Us Description',
                 'group'      => 'about',
                 'created_at' => $now,

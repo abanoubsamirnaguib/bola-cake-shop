@@ -27,12 +27,12 @@ const StarRow = ({ rating }) => (
         key={s}
         icon={starSharp}
         style={{
-          color: s <= Math.round(rating) ? '#C9A96E' : '#2A2A2A',
+          color: s <= Math.round(rating) ? '#C99A75' : '#D5C2C5',
           fontSize: '0.9rem',
         }}
       />
     ))}
-    <span style={{ color: '#7A7A7A', fontSize: '0.75rem', marginLeft: '4px' }}>{rating} / 5</span>
+    <span style={{ color: '#78676B', fontSize: '0.75rem', marginLeft: '4px' }}>{rating} / 5</span>
   </div>
 );
 
@@ -186,7 +186,7 @@ export const ProductModal = (props) => {
 
   return (
     <>
-      <IonContent style={{ '--background': '#0C0C0C' }}>
+      <IonContent style={{ '--background': '#FBF8F5' }}>
 
         {/* ── Image Gallery Slider ── */}
         <div style={{ position: 'relative' }}>
@@ -223,7 +223,7 @@ export const ProductModal = (props) => {
                     objectFit: 'cover',
                     display: 'block',
                     scrollSnapAlign: 'start',
-                    backgroundColor: '#000',
+                    backgroundColor: '#F5EFEB',
                   }}
                 />
               ) : (
@@ -240,7 +240,7 @@ export const ProductModal = (props) => {
                     objectFit: 'contain',
                     display: 'block',
                     scrollSnapAlign: 'start',
-                    backgroundColor: '#000',
+                    backgroundColor: '#F5EFEB',
                   }}
                 />
               )
@@ -255,7 +255,7 @@ export const ProductModal = (props) => {
                   objectFit: 'contain',
                   display: 'block',
                   scrollSnapAlign: 'start',
-                  backgroundColor: '#000',
+                  backgroundColor: '#F5EFEB',
                 }}
               />
             )}
@@ -269,7 +269,7 @@ export const ProductModal = (props) => {
               left: 0,
               right: 0,
               height: '60px',
-              background: 'linear-gradient(0deg, #0C0C0C, transparent)',
+              background: 'linear-gradient(0deg, #FBF8F5, transparent)',
               pointerEvents: 'none',
             }}
           />
@@ -281,8 +281,8 @@ export const ProductModal = (props) => {
                 position: 'absolute',
                 bottom: '12px',
                 right: '12px',
-                background: '#C9A96E',
-                color: '#0C0C0C',
+                background: '#5A2A38',
+                color: '#FBF8F5',
                 fontSize: '0.7rem',
                 fontWeight: 700,
                 letterSpacing: '0.1em',
@@ -305,14 +305,21 @@ export const ProductModal = (props) => {
             <IonButton
               onClick={dismiss}
               style={{
-                '--background': 'rgba(12,12,12,0.7)',
-                '--color': '#F5F0E8',
+                '--background': 'rgba(251, 248, 245, 0.92)',
+                '--background-hover': '#FFFFFF',
+                '--background-activated': '#F4ECE7',
+                '--background-focused': '#FFFFFF',
+                '--color': '#5A2A38',
+                '--color-hover': '#401523',
+                '--ripple-color': 'rgba(90, 42, 56, 0.12)',
                 '--border-radius': '50%',
                 '--padding-start': '6px',
                 '--padding-end': '6px',
+                border: 'none',
+                boxShadow: '0 2px 8px rgba(90, 42, 56, 0.12)',
               }}
             >
-              <IonIcon icon={closeOutline} style={{ fontSize: '1.3rem' }} />
+              <IonIcon icon={closeOutline} style={{ fontSize: '1.3rem', color: '#5A2A38' }} />
             </IonButton>
           </IonButtons>
 
@@ -327,14 +334,24 @@ export const ProductModal = (props) => {
             <IonButton
               onClick={() => addToFavourites(product, category)}
               style={{
-                '--background': 'rgba(12,12,12,0.7)',
-                '--color': isFavourite ? '#CF6679' : '#F5F0E8',
+                '--background': 'rgba(251, 248, 245, 0.92)',
+                '--background-hover': '#FFFFFF',
+                '--background-activated': '#F4ECE7',
+                '--background-focused': '#FFFFFF',
+                '--color': isFavourite ? '#96384C' : '#5A2A38',
+                '--color-hover': isFavourite ? '#7A2A3A' : '#401523',
+                '--ripple-color': 'rgba(90, 42, 56, 0.12)',
                 '--border-radius': '50%',
                 '--padding-start': '6px',
                 '--padding-end': '6px',
+                border: 'none',
+                boxShadow: '0 2px 8px rgba(90, 42, 56, 0.12)',
               }}
             >
-              <IonIcon icon={isFavourite ? heart : heartOutline} style={{ fontSize: '1.3rem' }} />
+              <IonIcon
+                icon={isFavourite ? heart : heartOutline}
+                style={{ fontSize: '1.3rem', color: isFavourite ? '#96384C' : '#5A2A38' }}
+              />
             </IonButton>
           </IonButtons>
 
@@ -349,14 +366,21 @@ export const ProductModal = (props) => {
             <IonButton
               onClick={handleShare}
               style={{
-                '--background': 'rgba(12,12,12,0.7)',
-                '--color': '#F5F0E8',
+                '--background': 'rgba(251, 248, 245, 0.92)',
+                '--background-hover': '#FFFFFF',
+                '--background-activated': '#F4ECE7',
+                '--background-focused': '#FFFFFF',
+                '--color': '#5A2A38',
+                '--color-hover': '#401523',
+                '--ripple-color': 'rgba(90, 42, 56, 0.12)',
                 '--border-radius': '50%',
                 '--padding-start': '6px',
                 '--padding-end': '6px',
+                border: 'none',
+                boxShadow: '0 2px 8px rgba(90, 42, 56, 0.12)',
               }}
             >
-              <IonIcon icon={shareOutline} style={{ fontSize: '1.3rem' }} />
+              <IonIcon icon={shareOutline} style={{ fontSize: '1.3rem', color: '#5A2A38' }} />
             </IonButton>
           </IonButtons>
         </div>
@@ -370,7 +394,7 @@ export const ProductModal = (props) => {
               gap: '6px',
               padding: '8px 12px',
               overflowX: 'auto',
-              background: '#0C0C0C',
+              background: '#FBF8F5',
               scrollbarWidth: 'none',
               msOverflowStyle: 'none',
               direction: 'ltr',
@@ -380,6 +404,8 @@ export const ProductModal = (props) => {
             {galleryItems.map((item, i) => (
               <button
                 key={item.id ?? i}
+                type="button"
+                className="sucre-btn"
                 onClick={() => scrollToSlide(i)}
                 aria-label={`View media ${i + 1}`}
                 style={{
@@ -387,14 +413,15 @@ export const ProductModal = (props) => {
                   width: '52px',
                   height: '52px',
                   padding: 0,
-                  border: i === activeSlide ? '2px solid #C9A96E' : '2px solid transparent',
-                  borderRadius: '4px',
+                  border: i === activeSlide ? '2px solid #5A2A38' : '2px solid #EFE7E1',
+                  borderRadius: '8px',
                   overflow: 'hidden',
                   cursor: 'pointer',
-                  background: 'transparent',
+                  background: '#F5EFEB',
                   outline: 'none',
-                  opacity: i === activeSlide ? 1 : 0.5,
-                  transition: 'border-color 0.2s, opacity 0.2s',
+                  opacity: i === activeSlide ? 1 : 0.7,
+                  transition: 'border-color 0.2s, opacity 0.2s, box-shadow 0.2s',
+                  boxShadow: i === activeSlide ? '0 2px 8px rgba(90, 42, 56, 0.15)' : 'none',
                 }}
               >
                 {item.type === 'video' ? (
@@ -402,7 +429,7 @@ export const ProductModal = (props) => {
                     src={item.url}
                     muted
                     playsInline
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', pointerEvents: 'none', backgroundColor: '#000' }}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', pointerEvents: 'none', backgroundColor: '#F5EFEB' }}
                   />
                 ) : (
                   <img
@@ -429,10 +456,10 @@ export const ProductModal = (props) => {
           {/* Title */}
           <h1
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontWeight: 300,
               fontSize: '1.9rem',
-              color: '#F5F0E8',
+              color: '#241419',
               margin: '0 0 6px',
               lineHeight: 1.2,
             }}
@@ -446,9 +473,9 @@ export const ProductModal = (props) => {
           {/* Price */}
           <p
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontSize: '1.5rem',
-              color: '#C9A96E',
+              color: '#5A2A38',
               fontWeight: 400,
               margin: '0.75rem 0 0',
               letterSpacing: '0.05em',
@@ -468,18 +495,16 @@ export const ProductModal = (props) => {
             {(sortedAttributes.length > 0 ? sortedAttributes : [{ id: 'default', name: 'Standard', value: '', formatted_price: null }]).map((opt) => (
               <button
                 key={opt.id ?? opt.value}
+                type="button"
+                className={`sucre-btn sucre-btn-chip${(selectedAttr?.id ?? 'default') === (opt.id ?? 'default') ? ' is-active' : ''}`}
                 onClick={() => setSelectedAttributeId(opt.id ?? null)}
                 style={{
-                  background: (selectedAttr?.id ?? 'default') === (opt.id ?? 'default') ? '#C9A96E' : '#1E1E1E',
-                  color: (selectedAttr?.id ?? 'default') === (opt.id ?? 'default') ? '#0C0C0C' : '#7A7A7A',
-                  border: (selectedAttr?.id ?? 'default') === (opt.id ?? 'default') ? '1px solid #C9A96E' : '1px solid #2A2A2A',
-                  borderRadius: '2px',
+                  borderRadius: '8px',
                   padding: '6px 14px',
                   fontSize: '0.72rem',
                   fontWeight: 600,
                   letterSpacing: '0.1em',
-                  cursor: 'pointer',
-                  fontFamily: "'Jost', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
@@ -499,11 +524,11 @@ export const ProductModal = (props) => {
           <p className="section-label" style={{ marginBottom: '0.5rem' }}>{t('product.about')}</p>
           <p
             style={{
-              color: '#7A7A7A',
+              color: '#78676B',
               fontSize: '0.88rem',
               lineHeight: 1.7,
               margin: 0,
-              fontFamily: "'Jost', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
             }}
           >
             {productDescription || t('product.description')}
@@ -518,8 +543,8 @@ export const ProductModal = (props) => {
       </IonContent>
 
       {/* ── Footer CTA ── */}
-      <IonFooter style={{ '--background': '#111111', borderTop: '1px solid #2A2A2A' }}>
-        <IonToolbar style={{ '--background': '#111111', '--padding-start': '1rem', '--padding-end': '1rem' }}>
+      <IonFooter style={{ '--background': '#FBF8F5', borderTop: '1px solid #EFE7E1' }}>
+        <IonToolbar style={{ '--background': '#FBF8F5', '--padding-start': '1rem', '--padding-end': '1rem' }}>
           <div
             style={{
               display: 'flex',
@@ -529,7 +554,7 @@ export const ProductModal = (props) => {
             }}
           >
             <div style={{ flex: '0 0 auto' }}>
-              <p style={{ margin: 0, color: '#7A7A7A', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              <p style={{ margin: 0, color: '#78676B', fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 {t('product.price')}
               </p>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -537,8 +562,8 @@ export const ProductModal = (props) => {
                   <p
                     style={{
                       margin: 0,
-                      color: '#EF4444',
-                      fontFamily: "'Cormorant Garamond', serif",
+                      color: '#D5C2C5',
+                      fontFamily: "'Playfair Display', serif",
                       fontSize: '1rem',
                       fontWeight: 700,
                       textDecoration: 'line-through',
@@ -550,8 +575,8 @@ export const ProductModal = (props) => {
                 <p
                   style={{
                     margin: 0,
-                    color: '#C9A96E',
-                    fontFamily: "'Cormorant Garamond', serif",
+                    color: '#5A2A38',
+                    fontFamily: "'Playfair Display', serif",
                     fontSize: '1.3rem',
                     fontWeight: 400,
                   }}

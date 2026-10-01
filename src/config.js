@@ -1,5 +1,5 @@
 /**
- * Central configuration for the Anfas Ionic React app.
+ * Central configuration for the Sucre Pâtisserie Ionic React app.
  *
  * Change API_BASE_URL to match your Laravel server address:
  *   - Laragon default vhost  →  http://anfas.test/api/v1

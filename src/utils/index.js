@@ -1,26 +1,35 @@
 export const capitalize = s => s && (s[0].toUpperCase() + s.slice(1)).replaceAll("_", " ");
 
-export const FALLBACK_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23151515'/%3E%3Cstop offset='1' stop-color='%231C140A'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23bg)'/%3E%3Ctext x='200' y='270' fill='%23C9A96E' font-size='64' text-anchor='middle' font-family='Georgia%2C serif' opacity='0.4'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E";
+export const FALLBACK_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='500'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23F6F3F0'/%3E%3Cstop offset='1' stop-color='%23F4ECE7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='500' fill='url(%23bg)'/%3E%3Ctext x='200' y='270' fill='%235A2A38' font-size='48' text-anchor='middle' font-family='Georgia%2C serif' opacity='0.35'%3ES%3C/text%3E%3C/svg%3E";
 
 export const productInfo = {
 
-	women: {
-		tagline: "For Her",
-		// Fallback filter tags shown when the API returns no tags for this category
-		filters: ["None", "Floral", "Oud", "Oriental", "Fresh"],
-		searchPlaceholder: "fragrances",
+	cakes: {
+		tagline: "Signature Pâtisserie",
+		tagline_ar: "توقيع باتisserie",
+		filters: ["None", "Floral", "Berry", "Vanilla", "Occasion"],
+		searchPlaceholder: "pastries",
 	},
 
-	men: {
-		tagline: "For Him",
-		filters: ["None", "Woody", "Oud", "Fresh", "Citrus"],
-		searchPlaceholder: "fragrances",
+	tarts: {
+		tagline: "Gourmet Boutique",
+		tagline_ar: "بوتيك الذواقة",
+		filters: ["None", "Raspberry", "Pistachio", "Cream", "Fruit"],
+		searchPlaceholder: "pastries",
+	},
+
+	macarons: {
+		tagline: "Luxury Gift",
+		tagline_ar: "هدية فاخرة",
+		filters: ["None", "Rose", "Pistachio", "Vanilla", "Gift"],
+		searchPlaceholder: "pastries",
 	},
 
 	offers: {
-		tagline: "Offers",
-		filters: ["None", "Floral", "Oud", "Luxury", "Fresh"],
-		searchPlaceholder: "fragrances",
+		tagline: "Seasonal Selection",
+		tagline_ar: "اختيارات الموسم",
+		filters: ["None", "Limited", "Gift", "Berry", "Luxury"],
+		searchPlaceholder: "pastries",
 	},
 
 };
@@ -29,19 +38,19 @@ export const productSpecs = {
 
 	details: {
 
-		header: "Fragrance Notes",
+		header: "Flavor Notes",
 		options: [
 			{
-				label: "Top Notes",
-				value: "Bergamot, Pink Pepper"
+				label: "Top",
+				value: "Madagascar Vanilla, Rose"
 			},
 			{
-				label: "Heart Notes",
-				value: "Rose, Jasmine, Oud"
+				label: "Heart",
+				value: "Raspberry, Pistachio"
 			},
 			{
-				label: "Base Notes",
-				value: "Sandalwood, Musk, Amber"
+				label: "Base",
+				value: "Almond, Cream, Cocoa"
 			}
 		]
 	},
@@ -69,16 +78,16 @@ export const productSpecs = {
 		wrapText: true,
 		options: [
 			{
-				label: "Travel",
-				value: "10 ml"
+				label: "Petite",
+				value: "Individual"
 			},
 			{
-				label: "Standard",
-				value: "50 ml"
+				label: "Classic",
+				value: "6–8 servings"
 			},
 			{
-				label: "Prestige",
-				value: "100 ml"
+				label: "Celebration",
+				value: "12–16 servings"
 			}
 		]
 	}

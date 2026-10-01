@@ -44,17 +44,23 @@ export const AddToCartButton = ({ product, attribute = null, image = null }) => 
 	return (
 		<IonButton
 			expand="block"
+			className="btn-gold"
 			onClick={handleAddToCart}
 			style={{
-				'--background': '#C9A96E',
-				'--color': '#0C0C0C',
-				'--border-radius': '2px',
+				'--background': '#5A2A38',
+				'--background-hover': '#451E2A',
+				'--background-activated': '#401523',
+				'--background-focused': '#451E2A',
+				'--color': '#FBF8F5',
+				'--color-hover': '#FBF8F5',
+				'--ripple-color': 'rgba(251, 248, 245, 0.25)',
+				'--border-radius': '4px',
 				'--box-shadow': 'none',
 				fontWeight: 600,
 				letterSpacing: '0.12em',
 				textTransform: 'uppercase',
 				fontSize: '0.75rem',
-				fontFamily: "'Jost', sans-serif",
+				fontFamily: "'Plus Jakarta Sans', sans-serif",
 			}}
 		>
 			<IonIcon icon={bagAddOutline} slot="start" />

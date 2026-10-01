@@ -268,7 +268,7 @@ export const CartModal = (props) => {
       <IonHeader className="ion-no-border">
         <IonToolbar
           style={{
-            "--background": "#0C0C0C",
+            "--background": "#FBF8F5",
             "--border-color": "transparent",
             "--padding-start": "1rem",
             "--padding-end": "1rem",
@@ -276,11 +276,11 @@ export const CartModal = (props) => {
         >
           <IonTitle
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontWeight: 300,
               fontSize: "1.4rem",
               letterSpacing: "0.25em",
-              color: "#C9A96E",
+              color: "#5A2A38",
               textTransform: "uppercase",
             }}
           >
@@ -289,13 +289,13 @@ export const CartModal = (props) => {
           <IonButtons slot="end" onClick={props.close}>
             <IonIcon
               icon={closeOutline}
-              style={{ color: "#C9A96E", fontSize: "1.5rem", cursor: "pointer" }}
+              style={{ color: "#5A2A38", fontSize: "1.5rem", cursor: "pointer" }}
             />
           </IonButtons>
         </IonToolbar>
       </IonHeader>
 
-      <IonContent style={{ "--background": "#0C0C0C" }}>
+      <IonContent style={{ "--background": "#FBF8F5" }}>
         {/* ════════════ STEP 1: Cart Review ════════════ */}
         {step === 1 && (
           <>
@@ -303,14 +303,14 @@ export const CartModal = (props) => {
         <div
           style={{
             padding: "1rem 1.25rem",
-            borderBottom: "1px solid #2A2A2A",
+            borderBottom: "1px solid #EFE7E1",
           }}
         >
             <p
             style={{
-              fontFamily: "'Cormorant Garamond', serif",
+              fontFamily: "'Playfair Display', serif",
               fontSize: "1rem",
-              color: "#F5F0E8",
+              color: "#241419",
               margin: 0,
             }}
           >
@@ -322,7 +322,7 @@ export const CartModal = (props) => {
           <p
             style={{
               fontSize: "0.72rem",
-              color: "#7A7A7A",
+              color: "#78676B",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               margin: "4px 0 0",
@@ -345,15 +345,15 @@ export const CartModal = (props) => {
           >
             <p
               style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontSize: "1.5rem",
-                color: "#2A2A2A",
+                color: "#78676B",
                 margin: 0,
               }}
             >
               {t('cart.emptyTitle')}
             </p>
-            <p style={{ color: "#7A7A7A", fontSize: "0.8rem" }}>{t('cart.emptySubtitle')}</p>
+            <p style={{ color: "#A0908A", fontSize: "0.8rem" }}>{t('cart.emptySubtitle')}</p>
           </div>
         )}
 
@@ -362,9 +362,9 @@ export const CartModal = (props) => {
             <IonItem
               lines="none"
               style={{
-                "--background": "#111111",
-                "--color": "#F5F0E8",
-                "--border-color": "#2A2A2A",
+                "--background": "#FBF8F5",
+                "--color": "#241419",
+                "--border-color": "#EFE7E1",
                 "--inner-border-width": "0 0 1px 0",
                 "--padding-start": "1.25rem",
                 "--padding-end": "1.25rem",
@@ -396,9 +396,9 @@ export const CartModal = (props) => {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <p
                     style={{
-                      fontFamily: "'Cormorant Garamond', serif",
+                      fontFamily: "'Playfair Display', serif",
                       fontSize: "1rem",
-                      color: "#F5F0E8",
+                      color: "#241419",
                       margin: 0,
                       lineHeight: 1.2,
                     }}
@@ -406,7 +406,7 @@ export const CartModal = (props) => {
                     {item.title}{(item.attribute_value || item.size) ? ` • ${item.attribute_value || item.size}` : ''}
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
-                    <p style={{ color: '#C9A96E', fontSize: '0.85rem', fontWeight: 500, margin: 0 }}>
+                    <p style={{ color: '#5A2A38', fontSize: '0.85rem', fontWeight: 500, margin: 0 }}>
                       {(() => {
                         const raw = String(item.price || '').replace(/[^0-9]/g, '');
                         const num = parseFloat(raw) || 0;
@@ -414,7 +414,7 @@ export const CartModal = (props) => {
                       })()}
                     </p>
                     {(item.qty || 1) > 1 && (
-                      <p style={{ color: '#7A7A7A', fontSize: '0.7rem', fontWeight: 400, margin: '2px 0 0', fontStyle: 'italic' }}>
+                      <p style={{ color: '#78676B', fontSize: '0.7rem', fontWeight: 400, margin: '2px 0 0', fontStyle: 'italic' }}>
                         {(() => {
                           const raw = String(item.price || '').replace(/[^0-9]/g, '');
                           const num = parseFloat(raw) || 0;
@@ -428,19 +428,54 @@ export const CartModal = (props) => {
                 </div>
 
                 <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <IonButton type="button" size="small" onClick={() => decreaseQty(item, 1)}>-</IonButton>
-                  <div style={{ color: '#F5F0E8' }}>{item.qty || 1}</div>
-                  <IonButton type="button" size="small" onClick={() => increaseQty(item, 1)}>+</IonButton>
+                  <IonButton
+                    type="button"
+                    size="small"
+                    className="sucre-soft"
+                    onClick={() => decreaseQty(item, 1)}
+                    style={{
+                      '--background': '#F4ECE7',
+                      '--background-hover': '#E8BEB7',
+                      '--background-activated': '#E8BEB7',
+                      '--background-focused': '#E8BEB7',
+                      '--color': '#5A2A38',
+                      '--color-hover': '#401523',
+                      '--ripple-color': 'rgba(90, 42, 56, 0.12)',
+                      '--border-radius': '6px',
+                      minWidth: '32px',
+                    }}
+                  >
+                    -
+                  </IonButton>
+                  <div style={{ color: '#401523', fontWeight: 600, minWidth: '1.25rem', textAlign: 'center' }}>{item.qty || 1}</div>
+                  <IonButton
+                    type="button"
+                    size="small"
+                    onClick={() => increaseQty(item, 1)}
+                    style={{
+                      '--background': '#5A2A38',
+                      '--background-hover': '#451E2A',
+                      '--background-activated': '#401523',
+                      '--background-focused': '#451E2A',
+                      '--color': '#FBF8F5',
+                      '--color-hover': '#FBF8F5',
+                      '--ripple-color': 'rgba(251, 248, 245, 0.25)',
+                      '--border-radius': '6px',
+                      minWidth: '32px',
+                    }}
+                  >
+                    +
+                  </IonButton>
                 </div>
               </IonLabel>
             </IonItem>
 
             <IonItemOptions side="end">
               <IonItemOption
-                style={{ "--background": "#1E0A0A", "--color": "#CF6679", width: "75px" }}
+                style={{ "--background": "#5A2A38", "--color": "#FBF8F5", width: "75px" }}
                 onClick={() => removeFromCart(item)}
               >
-                <IonIcon icon={trashOutline} slot="icon-only" />
+                <IonIcon icon={trashOutline} slot="icon-only" style={{ color: '#FBF8F5' }} />
               </IonItemOption>
             </IonItemOptions>
           </IonItemSliding>
@@ -452,16 +487,16 @@ export const CartModal = (props) => {
             {/* Divider */}
             <div style={{
               height: '1px',
-              background: 'linear-gradient(90deg, transparent 0%, #C9A96E 50%, transparent 100%)',
+              background: 'linear-gradient(90deg, transparent 0%, #5A2A38 50%, transparent 100%)',
               margin: '1.5rem 0',
             }} />
 
             {/* Heading */}
             <div style={{ padding: '0 1.25rem', marginBottom: '0.75rem' }}>
               <h3 style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontSize: '1rem',
-                color: '#C9A96E',
+                color: '#5A2A38',
                 letterSpacing: '0.15em',
                 textTransform: 'uppercase',
                 margin: 0,
@@ -473,9 +508,9 @@ export const CartModal = (props) => {
 
             {/* Suggested Products Horizontal Scroll */}
             <div style={{
-              padding: '0 0 1rem',
+              padding: '0 0 1.25rem',
               display: 'flex',
-              gap: '0.4rem',
+              gap: '0.75rem',
               overflowX: 'auto',
               overflowY: 'hidden',
               paddingLeft: '1.25rem',
@@ -497,15 +532,17 @@ export const CartModal = (props) => {
                   <div
                     key={product.id}
                     style={{
-                      background: '#1A1A1A',
-                      borderRadius: '4px',
-                      border: '1px solid #2A2A2A',
+                      background: '#FFFFFF',
+                      borderRadius: '12px',
+                      border: '1px solid #EFE7E1',
+                      boxShadow: '0 4px 16px -4px rgba(90, 42, 56, 0.07)',
                       display: 'flex',
                       flexDirection: 'column',
-                      minWidth: '110px',
-                      width: '110px',
+                      minWidth: '148px',
+                      width: '148px',
                       flexShrink: 0,
                       scrollSnapAlign: 'start',
+                      overflow: 'hidden',
                     }}
                   >
                     {/* Product Image */}
@@ -513,11 +550,11 @@ export const CartModal = (props) => {
                       onClick={() => handleOpenProduct(product)}
                       style={{
                         width: '100%',
-                        height: '80px',
-                        borderRadius: '4px 4px 0 0',
+                        height: '120px',
                         overflow: 'hidden',
                         cursor: 'pointer',
                         position: 'relative',
+                        background: '#F5EFEB',
                       }}
                     >
                       <img
@@ -531,20 +568,18 @@ export const CartModal = (props) => {
                           objectFit: 'cover',
                         }}
                       />
-                      {/* Discount Badge */}
                       {suggestedHasDiscount && (
                         <div style={{
                           position: 'absolute',
-                          top: '4px',
-                          right: '4px',
-                          background: '#CF6679',
-                          color: '#FFF',
+                          top: '6px',
+                          right: '6px',
+                          background: '#FECAA2',
+                          color: '#795334',
                           fontSize: '0.6rem',
                           fontWeight: 700,
-                          padding: '2px 4px',
-                          borderRadius: '3px',
+                          padding: '3px 6px',
+                          borderRadius: '4px',
                           lineHeight: 1,
-                          boxShadow: '0 1px 3px rgba(0,0,0,0.3)',
                         }}>
                           -{Math.round(suggestedAttr?.discount || 0)}%
                         </div>
@@ -552,94 +587,109 @@ export const CartModal = (props) => {
                     </div>
 
                     {/* Product Info */}
-                    <div style={{ 
-                      padding: '0.4rem',
+                    <div style={{
+                      padding: '0.65rem 0.7rem 0.75rem',
                       display: 'flex',
                       flexDirection: 'column',
                       gap: '0.2rem',
                       flex: 1,
                     }}>
-                      <p 
+                      <p
                         onClick={() => handleOpenProduct(product)}
                         style={{
-                          fontFamily: "'Cormorant Garamond', serif",
-                          fontSize: '0.7rem',
-                          color: '#F5F0E8',
+                          fontFamily: "'Playfair Display', serif",
+                          fontSize: '0.85rem',
+                          fontWeight: 500,
+                          color: '#401523',
                           margin: 0,
-                          lineHeight: 1.1,
+                          lineHeight: 1.25,
                           cursor: 'pointer',
                           overflow: 'hidden',
                           display: '-webkit-box',
                           WebkitLineClamp: 2,
                           WebkitBoxOrient: 'vertical',
                           textOverflow: 'ellipsis',
-                          minHeight: '1.8em',
                         }}
                       >
                         {product.title}
                       </p>
                       {productDescription && (
-                        <p style={{ fontSize: '0.6rem', color: '#7A7A7A', margin: '2px 0 0', lineHeight: 1.3, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                        <p style={{
+                          fontSize: '0.62rem',
+                          color: '#78676B',
+                          margin: 0,
+                          lineHeight: 1.35,
+                          display: '-webkit-box',
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                        }}>
                           {productDescription}
                         </p>
                       )}
                       {suggestedAttr && (
-                        <p style={{ fontSize: '0.6rem', color: '#A89880', margin: 0, lineHeight: 1.2 }}>
+                        <p style={{ fontSize: '0.58rem', color: '#A0908A', margin: 0, lineHeight: 1.2 }}>
                           {[suggestedAttr.name, suggestedAttr.value].filter(Boolean).join(' • ')}
                         </p>
                       )}
-                      {suggestedOriginalPrice && (
-                        <p style={{
-                          color: '#EF4444',
-                          fontSize: '0.55rem',
-                          fontWeight: 700,
-                          margin: 0,
-                          textDecoration: 'line-through',
-                        }}>
-                          {suggestedOriginalPrice}
-                        </p>
-                      )}
-                      <p style={{
-                        color: '#C9A96E',
-                        fontSize: '0.65rem',
-                        fontWeight: 600,
-                        margin: 0,
-                      }}>
-                        {suggestedPrice}
-                      </p>
 
-                      {/* Add Icon Button */}
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleQuickAddToCart(product);
-                        }}
-                        style={{
-                          width: '24px',
-                          height: '24px',
-                          background: '#C9A96E',
-                          border: 'none',
-                          borderRadius: '50%',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          cursor: 'pointer',
-                          transition: 'transform 0.2s',
-                          alignSelf: 'flex-end',
-                          marginTop: 'auto',
-                        }}
-                        onMouseDown={(e) => e.currentTarget.style.transform = 'scale(0.95)'}
-                        onMouseUp={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                        onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
-                      >
-                        {/* Shopping bag + plus icon */}
-                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0C0C0C" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                          <line x1="3" y1="6" x2="21" y2="6" />
-                          <line x1="12" y1="11" x2="12" y2="17" />
-                          <line x1="9" y1="14" x2="15" y2="14" />
-                        </svg>
-                      </button>
+                      {/* Price + Add button row (Stitch pattern) */}
+                      <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '0.4rem',
+                        marginTop: 'auto',
+                        paddingTop: '0.45rem',
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.35rem', flexWrap: 'wrap', minWidth: 0 }}>
+                          <span style={{
+                            color: '#5A2A38',
+                            fontSize: '0.78rem',
+                            fontWeight: 700,
+                            fontFamily: "'Plus Jakarta Sans', sans-serif",
+                          }}>
+                            {suggestedPrice}
+                          </span>
+                          {suggestedOriginalPrice && (
+                            <span style={{
+                              color: '#D5C2C5',
+                              fontSize: '0.62rem',
+                              fontWeight: 500,
+                              textDecoration: 'line-through',
+                            }}>
+                              {suggestedOriginalPrice}
+                            </span>
+                          )}
+                        </div>
+
+                        <button
+                          type="button"
+                          className="sucre-add-btn"
+                          aria-label={`Add ${product.title} to cart`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleQuickAddToCart(product);
+                          }}
+                          style={{
+                            width: '32px',
+                            height: '32px',
+                            flexShrink: 0,
+                            borderRadius: '8px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            cursor: 'pointer',
+                            boxShadow: '0 2px 8px rgba(90, 42, 56, 0.18)',
+                          }}
+                        >
+                          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#FBF8F5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 );
@@ -660,18 +710,18 @@ export const CartModal = (props) => {
               gap: '8px',
               marginBottom: '1.25rem',
               paddingBottom: '1rem',
-              borderBottom: '1px solid #2A2A2A',
+              borderBottom: '1px solid #EFE7E1',
             }}>
               <div style={{
                 width: '28px', height: '28px', borderRadius: '50%',
-                background: '#C9A96E', color: '#0C0C0C',
+                background: '#5A2A38', color: '#FBF8F5',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: '0.75rem', fontWeight: 700,
               }}>2</div>
               <p style={{
-                fontFamily: "'Cormorant Garamond', serif",
+                fontFamily: "'Playfair Display', serif",
                 fontSize: '1rem',
-                color: '#F5F0E8',
+                color: '#241419',
                 margin: 0,
               }}>
                 {t('cart.checkoutDetails')}
@@ -680,33 +730,39 @@ export const CartModal = (props) => {
 
             {/* Contact fields */}
             <div style={{ marginBottom: '1rem' }}>
-              <IonInput placeholder={(t && t('cart.name')) || 'Name'} value={name} onIonChange={e => setName(e.detail.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem', background: '#111111', border: '1px solid #2A2A2A', borderRadius: '4px', color: '#F5F0E8' }} />
-              <IonInput placeholder={(t && t('cart.phone')) || 'Phone'} value={phone} onIonChange={e => setPhone(e.detail.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem', background: '#111111', border: '1px solid #2A2A2A', borderRadius: '4px', color: '#F5F0E8' }} />
-              <IonInput placeholder={(t && t('cart.whatsappNumber')) || 'WhatsApp Number'} value={whatsappNumber} onIonChange={e => setWhatsappNumber(e.detail.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem', background: '#111111', border: '1px solid #2A2A2A', borderRadius: '4px', color: '#F5F0E8' }} />
-              <IonInput placeholder={(t && t('cart.address')) || 'Address'} value={address} onIonChange={e => setAddress(e.detail.value)} style={{ width: '100%', padding: '0.5rem', background: '#111111', border: '1px solid #2A2A2A', borderRadius: '4px', color: '#F5F0E8' }} />
+              <IonInput placeholder={(t && t('cart.name')) || 'Name'} value={name} onIonChange={e => setName(e.detail.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem', background: '#FBF8F5', border: '1px solid #EFE7E1', borderRadius: '4px', color: '#241419' }} />
+              <IonInput placeholder={(t && t('cart.phone')) || 'Phone'} value={phone} onIonChange={e => setPhone(e.detail.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem', background: '#FBF8F5', border: '1px solid #EFE7E1', borderRadius: '4px', color: '#241419' }} />
+              <IonInput placeholder={(t && t('cart.whatsappNumber')) || 'WhatsApp Number'} value={whatsappNumber} onIonChange={e => setWhatsappNumber(e.detail.value)} style={{ width: '100%', padding: '0.5rem', marginBottom: '0.5rem', background: '#FBF8F5', border: '1px solid #EFE7E1', borderRadius: '4px', color: '#241419' }} />
+              <IonInput placeholder={(t && t('cart.address')) || 'Address'} value={address} onIonChange={e => setAddress(e.detail.value)} style={{ width: '100%', padding: '0.5rem', background: '#FBF8F5', border: '1px solid #EFE7E1', borderRadius: '4px', color: '#241419' }} />
             </div>
 
             {/* Discount coupon row */}
             <div style={{ marginBottom: '1rem' }}>
               {!discountApplied ? (
                 <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                  <div style={{ flex: 1, background: '#111111', border: '1px solid #2A2A2A', borderRadius: '4px', overflow: 'hidden' }}>
+                  <div style={{ flex: 1, background: '#FBF8F5', border: '1px solid #EFE7E1', borderRadius: '4px', overflow: 'hidden' }}>
                     <IonInput
                       placeholder={t('cart.discountPlaceholder')}
                       value={discountCode}
                       onIonChange={e => setDiscountCode(e.detail.value)}
-                      style={{ '--color': '#F5F0E8', '--placeholder-color': '#555', padding: '0 0.5rem' }}
+                      style={{ '--color': '#241419', '--placeholder-color': '#555', padding: '0 0.5rem' }}
                       onKeyDown={e => { if (e.key === 'Enter') applyDiscount(); }}
                     />
                   </div>
                   <IonButton
                     type="button"
                     size="small"
+                    className="sucre-soft"
                     disabled={applyingDiscount || !discountCode.trim()}
                     onClick={applyDiscount}
                     style={{
-                      '--background': '#2A2A2A',
-                      '--color': '#C9A96E',
+                      '--background': '#F4ECE7',
+                      '--background-hover': '#E8BEB7',
+                      '--background-activated': '#E8BEB7',
+                      '--background-focused': '#E8BEB7',
+                      '--color': '#5A2A38',
+                      '--color-hover': '#401523',
+                      '--ripple-color': 'rgba(90, 42, 56, 0.12)',
                       '--border-radius': '4px',
                       '--box-shadow': 'none',
                       fontWeight: 600,
@@ -720,13 +776,13 @@ export const CartModal = (props) => {
                   </IonButton>
                 </div>
               ) : (
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#0D1E10', border: '1px solid #1D4228', borderRadius: '4px', padding: '0.5rem 0.75rem' }}>
-                  <span style={{ color: '#4CAF50', fontSize: '0.78rem', fontWeight: 600 }}>
-                    {t('cart.discountApplied')} — <span style={{ color: '#C9A96E' }}>{discountCode.toUpperCase()}</span>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#F0F7F1', border: '1px solid #C5E0CB', borderRadius: '8px', padding: '0.5rem 0.75rem' }}>
+                  <span style={{ color: '#2E7D4F', fontSize: '0.78rem', fontWeight: 600 }}>
+                    {t('cart.discountApplied')} — <span style={{ color: '#5A2A38' }}>{discountCode.toUpperCase()}</span>
                   </span>
                   <span
                     onClick={removeDiscount}
-                    style={{ color: '#7A7A7A', fontSize: '0.7rem', cursor: 'pointer', textDecoration: 'underline' }}
+                    style={{ color: '#78676B', fontSize: '0.7rem', cursor: 'pointer', textDecoration: 'underline' }}
                   >
                     {t('cart.removing')}
                   </span>
@@ -742,36 +798,36 @@ export const CartModal = (props) => {
               {discountApplied && discountAmount > 0 ? (
                 <>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '4px' }}>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', color: '#7A7A7A', margin: 0 }}>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', color: '#78676B', margin: 0 }}>
                       {t('cart.subtotal')}
                     </p>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', color: '#7A7A7A', margin: 0 }}>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', color: '#78676B', margin: 0 }}>
                       {totalPrice.toFixed(2)} L.E
                     </p>
                   </div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', color: '#4CAF50', margin: 0 }}>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', color: '#4CAF50', margin: 0 }}>
                       {t('cart.discountAmount')}
                     </p>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', color: '#4CAF50', margin: 0 }}>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1rem', color: '#4CAF50', margin: 0 }}>
                       -{discountAmount.toFixed(2)} L.E
                     </p>
                   </div>
-                  <div style={{ borderTop: '1px solid #2A2A2A', paddingTop: '8px', display: 'flex', justifyContent: 'space-between' }}>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', color: '#7A7A7A', margin: 0 }}>
+                  <div style={{ borderTop: '1px solid #EFE7E1', paddingTop: '8px', display: 'flex', justifyContent: 'space-between' }}>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', color: '#78676B', margin: 0 }}>
                       {t('cart.total')}
                     </p>
-                    <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', color: '#C9A96E', fontWeight: 400, margin: 0, letterSpacing: '0.05em' }}>
+                    <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', color: '#5A2A38', fontWeight: 400, margin: 0, letterSpacing: '0.05em' }}>
                       {finalTotal.toFixed(2)} L.E
                     </p>
                   </div>
                 </>
               ) : (
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', color: '#7A7A7A', margin: 0 }}>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', color: '#78676B', margin: 0 }}>
                     {t('cart.total')}
                   </p>
-                  <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', color: '#C9A96E', fontWeight: 400, margin: 0, letterSpacing: '0.05em' }}>
+                  <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', color: '#5A2A38', fontWeight: 400, margin: 0, letterSpacing: '0.05em' }}>
                     {totalPrice.toFixed(2)} L.E
                   </p>
                 </div>
@@ -784,8 +840,8 @@ export const CartModal = (props) => {
       {/* ── Footer ── */}
       <IonFooter
         style={{
-          "--background": "#111111",
-          borderTop: "1px solid #2A2A2A",
+          "--background": "#FBF8F5",
+          borderTop: "1px solid #EFE7E1",
           paddingBottom: "env(safe-area-inset-bottom)",
         }}
       >
@@ -794,28 +850,34 @@ export const CartModal = (props) => {
           {step === 1 && (
             <>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', color: '#7A7A7A', margin: 0 }}>
+                <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.1rem', color: '#78676B', margin: 0 }}>
                   {t('cart.total')}
                 </p>
-                <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', color: '#C9A96E', fontWeight: 400, margin: 0, letterSpacing: '0.05em' }}>
+                <p style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', color: '#5A2A38', fontWeight: 400, margin: 0, letterSpacing: '0.05em' }}>
                   {totalPrice.toFixed(2)} L.E
                 </p>
               </div>
               <IonButton
                 type="button"
                 expand="block"
+                className="btn-gold"
                 disabled={!cart || cart.length === 0}
                 onClick={() => setStep(2)}
                 style={{
-                  "--background": "#C9A96E",
-                  "--color": "#0C0C0C",
-                  "--border-radius": "2px",
+                  "--background": "#5A2A38",
+                  "--background-hover": "#451E2A",
+                  "--background-activated": "#401523",
+                  "--background-focused": "#451E2A",
+                  "--color": "#FBF8F5",
+                  "--color-hover": "#FBF8F5",
+                  "--ripple-color": "rgba(251, 248, 245, 0.25)",
+                  "--border-radius": "4px",
                   "--box-shadow": "none",
                   fontWeight: 600,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
                   fontSize: "0.75rem",
-                  fontFamily: "'Jost', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               >
                 {t('cart.continueToCheckout')}
@@ -828,17 +890,23 @@ export const CartModal = (props) => {
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               <IonButton
                 type="button"
+                className="sucre-soft"
                 onClick={() => setStep(1)}
                 style={{
-                  "--background": "#2A2A2A",
-                  "--color": "#F5F0E8",
-                  "--border-radius": "2px",
+                  "--background": "#F4ECE7",
+                  "--background-hover": "#E8BEB7",
+                  "--background-activated": "#E8BEB7",
+                  "--background-focused": "#E8BEB7",
+                  "--color": "#5A2A38",
+                  "--color-hover": "#401523",
+                  "--ripple-color": "rgba(90, 42, 56, 0.12)",
+                  "--border-radius": "4px",
                   "--box-shadow": "none",
                   fontWeight: 500,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   fontSize: "0.7rem",
-                  fontFamily: "'Jost', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   flex: '0 0 auto',
                 }}
               >
@@ -847,17 +915,23 @@ export const CartModal = (props) => {
               <IonButton
                 type="button"
                 expand="block"
+                className="btn-gold"
                 onClick={handleCheckout}
                 style={{
-                  "--background": "#C9A96E",
-                  "--color": "#0C0C0C",
-                  "--border-radius": "2px",
+                  "--background": "#5A2A38",
+                  "--background-hover": "#451E2A",
+                  "--background-activated": "#401523",
+                  "--background-focused": "#451E2A",
+                  "--color": "#FBF8F5",
+                  "--color-hover": "#FBF8F5",
+                  "--ripple-color": "rgba(251, 248, 245, 0.25)",
+                  "--border-radius": "4px",
                   "--box-shadow": "none",
                   fontWeight: 600,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
                   fontSize: "0.75rem",
-                  fontFamily: "'Jost', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
                   flex: 1,
                 }}
               >

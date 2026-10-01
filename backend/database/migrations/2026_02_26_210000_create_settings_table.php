@@ -30,7 +30,7 @@ return new class extends Migration
             ],
             [
                 'key'        => 'shop_name',
-                'value'      => 'Anfas',
+                'value'      => 'Sucre Pâtisserie',
                 'label'      => 'Shop Name',
                 'group'      => 'general',
                 'created_at' => now(),

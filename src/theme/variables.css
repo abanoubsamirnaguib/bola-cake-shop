@@ -1,43 +1,48 @@
-/* Bellezza Perfume App – Luxury Dark Theme */
+/* Sucre Pâtisserie – Blush Haute Luxury Theme */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
 
 :root {
-  /* ─── Bellezza Brand Palette ─── */
-  --bellezza-bg:          #0C0C0C;
-  --bellezza-surface:     #151515;
-  --bellezza-surface-2:   #1E1E1E;
-  --bellezza-gold:        #C9A96E;
-  --bellezza-gold-light:  #E2C98A;
-  --bellezza-gold-dark:   #9E7D4A;
-  --bellezza-white:       #F5F0E8;
-  --bellezza-muted:       #7A7A7A;
-  --bellezza-divider:     #2A2A2A;
-  --bellezza-card:        #181818;
+  /* ─── Sucre Brand Palette ─── */
+  --sucre-bg:             #FBF8F5;
+  --sucre-surface:        #FFFFFF;
+  --sucre-surface-2:      #F4ECE7;
+  --sucre-surface-low:    #F6F3F0;
+  --sucre-primary:        #5A2A38;
+  --sucre-primary-deep:   #401523;
+  --sucre-rose-gold:      #C99A75;
+  --sucre-blush:          #E8BEB7;
+  --sucre-peach:          #FECAA2;
+  --sucre-text:           #241419;
+  --sucre-muted:          #78676B;
+  --sucre-divider:        #EFE7E1;
+  --sucre-outline:        #D5C2C5;
+  --sucre-card:           #FFFFFF;
+  --sucre-on-primary:     #FBF8F5;
 
-  /** primary → gold **/
-  --ion-color-primary: #C9A96E;
-  --ion-color-primary-rgb: 201, 169, 110;
-  --ion-color-primary-contrast: #0C0C0C;
-  --ion-color-primary-contrast-rgb: 12, 12, 12;
-  --ion-color-primary-shade: #9E7D4A;
-  --ion-color-primary-tint: #E2C98A;
+  /** primary → deep cassis **/
+  --ion-color-primary: #5A2A38;
+  --ion-color-primary-rgb: 90, 42, 56;
+  --ion-color-primary-contrast: #FBF8F5;
+  --ion-color-primary-contrast-rgb: 251, 248, 245;
+  --ion-color-primary-shade: #401523;
+  --ion-color-primary-tint: #6A3745;
 
-  /** secondary **/
-  --ion-color-secondary: #E2C98A;
-  --ion-color-secondary-rgb: 226, 201, 138;
-  --ion-color-secondary-contrast: #0C0C0C;
-  --ion-color-secondary-contrast-rgb: 12, 12, 12;
-  --ion-color-secondary-shade: #b8a070;
-  --ion-color-secondary-tint: #ead5a0;
+  /** secondary → rose gold **/
+  --ion-color-secondary: #C99A75;
+  --ion-color-secondary-rgb: 201, 154, 117;
+  --ion-color-secondary-contrast: #241419;
+  --ion-color-secondary-contrast-rgb: 36, 20, 25;
+  --ion-color-secondary-shade: #7C5636;
+  --ion-color-secondary-tint: #E8BEB7;
 
   /** tertiary **/
-  --ion-color-tertiary: #9E7D4A;
-  --ion-color-tertiary-rgb: 158, 125, 74;
+  --ion-color-tertiary: #4E322D;
+  --ion-color-tertiary-rgb: 78, 50, 45;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #7a6039;
-  --ion-color-tertiary-tint: #b08d5c;
+  --ion-color-tertiary-shade: #361D19;
+  --ion-color-tertiary-tint: #C19A93;
 
   /** success **/
   --ion-color-success: #4CAF82;
@@ -48,91 +53,95 @@
   --ion-color-success-tint: #61bc91;
 
   /** warning **/
-  --ion-color-warning: #C9A96E;
-  --ion-color-warning-rgb: 201, 169, 110;
+  --ion-color-warning: #C99A75;
+  --ion-color-warning-rgb: 201, 154, 117;
   --ion-color-warning-contrast: #000000;
   --ion-color-warning-contrast-rgb: 0, 0, 0;
-  --ion-color-warning-shade: #9E7D4A;
-  --ion-color-warning-tint: #E2C98A;
+  --ion-color-warning-shade: #7C5636;
+  --ion-color-warning-tint: #FECAA2;
 
   /** danger **/
-  --ion-color-danger: #CF6679;
-  --ion-color-danger-rgb: 207, 102, 121;
+  --ion-color-danger: #BA1A1A;
+  --ion-color-danger-rgb: 186, 26, 26;
   --ion-color-danger-contrast: #ffffff;
   --ion-color-danger-contrast-rgb: 255, 255, 255;
-  --ion-color-danger-shade: #b3576a;
-  --ion-color-danger-tint: #d97586;
+  --ion-color-danger-shade: #93000A;
+  --ion-color-danger-tint: #CF6679;
 
   /** dark **/
-  --ion-color-dark: #F5F0E8;
-  --ion-color-dark-rgb: 245, 240, 232;
-  --ion-color-dark-contrast: #0C0C0C;
-  --ion-color-dark-contrast-rgb: 12, 12, 12;
-  --ion-color-dark-shade: #ccc6bd;
-  --ion-color-dark-tint: #f6f2ea;
+  --ion-color-dark: #241419;
+  --ion-color-dark-rgb: 36, 20, 25;
+  --ion-color-dark-contrast: #FBF8F5;
+  --ion-color-dark-contrast-rgb: 251, 248, 245;
+  --ion-color-dark-shade: #1B1C1A;
+  --ion-color-dark-tint: #401523;
 
   /** medium **/
-  --ion-color-medium: #7A7A7A;
-  --ion-color-medium-rgb: 122, 122, 122;
+  --ion-color-medium: #78676B;
+  --ion-color-medium-rgb: 120, 103, 107;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
-  --ion-color-medium-shade: #5f5f5f;
-  --ion-color-medium-tint: #898989;
+  --ion-color-medium-shade: #514346;
+  --ion-color-medium-tint: #837376;
 
   /** light **/
-  --ion-color-light: #1E1E1E;
-  --ion-color-light-rgb: 30, 30, 30;
-  --ion-color-light-contrast: #F5F0E8;
-  --ion-color-light-contrast-rgb: 245, 240, 232;
-  --ion-color-light-shade: #181818;
-  --ion-color-light-tint: #282828;
+  --ion-color-light: #F4ECE7;
+  --ion-color-light-rgb: 244, 236, 231;
+  --ion-color-light-contrast: #241419;
+  --ion-color-light-contrast-rgb: 36, 20, 25;
+  --ion-color-light-shade: #EFE7E1;
+  --ion-color-light-tint: #FBF8F5;
 
   /* ─── Ionic Background Overrides ─── */
-  --ion-background-color:          #0C0C0C;
-  --ion-background-color-rgb:      12, 12, 12;
-  --ion-text-color:                 #F5F0E8;
-  --ion-text-color-rgb:             245, 240, 232;
-  --ion-tab-bar-background:         #111111;
-  --ion-tab-bar-color:              #4A4A4A;
-  --ion-tab-bar-color-selected:     #C9A96E;
-  --ion-item-background:            #151515;
-  --ion-card-background:            #151515;
-  --ion-toolbar-background:         #0C0C0C;
-  --ion-border-color:               #2A2A2A;
+  --ion-background-color:          #FBF8F5;
+  --ion-background-color-rgb:      251, 248, 245;
+  --ion-text-color:                 #241419;
+  --ion-text-color-rgb:             36, 20, 25;
+  --ion-tab-bar-background:         rgba(251, 248, 245, 0.92);
+  --ion-tab-bar-color:              #837376;
+  --ion-tab-bar-color-selected:     #5A2A38;
+  --ion-item-background:            #FFFFFF;
+  --ion-card-background:            #FFFFFF;
+  --ion-toolbar-background:         rgba(251, 248, 245, 0.92);
+  --ion-border-color:               #EFE7E1;
 }
 
 /* ─── Global Typography ─── */
 * {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   letter-spacing: 0.02em;
 }
 
-h1, h2, h3, .bellezza-serif {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
+h1, h2, h3, .bellezza-serif, .sucre-serif {
+  font-family: 'Playfair Display', 'Amiri', serif;
+  font-weight: 500;
 }
 
 ion-tab-bar {
   --border: none;
-  --background: #111111;
+  --background: rgba(251, 248, 245, 0.92);
   height: 4.5rem;
-  border-top: 1px solid #2A2A2A;
+  border-top: 1px solid #E8BEB7;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 ion-toolbar,
 ion-header {
-  --background: #0C0C0C;
-  --border-color: #2A2A2A;
-  --color: #F5F0E8;
+  --background: rgba(251, 248, 245, 0.92);
+  --border-color: transparent;
+  --color: #5A2A38;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 ion-title {
-  color: #F5F0E8;
+  color: #5A2A38;
 }
 
 ion-tab-button {
-  --color: #4A4A4A;
-  --color-selected: #C9A96E;
+  --color: #837376;
+  --color-selected: #5A2A38;
   border-radius: 0 !important;
 }
 
@@ -141,42 +150,42 @@ ion-tab-button ion-icon {
 }
 
 ion-searchbar {
-  --background: #1E1E1E !important;
-  --color: #F5F0E8 !important;
-  --placeholder-color: #7A7A7A !important;
-  --icon-color: #C9A96E !important;
-  --border-radius: 4px !important;
+  --background: #F4ECE7 !important;
+  --color: #241419 !important;
+  --placeholder-color: #78676B !important;
+  --icon-color: #5A2A38 !important;
+  --border-radius: 8px !important;
   --box-shadow: none !important;
 }
 
 ion-item {
-  --background: #151515;
-  --color: #F5F0E8;
-  --border-color: #2A2A2A;
+  --background: #FFFFFF;
+  --color: #241419;
+  --border-color: #EFE7E1;
 }
 
 ion-label {
-  color: #F5F0E8 !important;
+  color: #241419 !important;
 }
 
 ion-note {
-  color: #7A7A7A !important;
+  color: #78676B !important;
 }
 
 .custom-back {
-  --color: #C9A96E;
+  --color: #5A2A38;
 }
 
 .page-title {
-  font-family: 'Cormorant Garamond', serif !important;
-  font-weight: 300 !important;
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 500 !important;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .tab-dot {
   border-radius: 500px;
-  background-color: #C9A96E;
+  background-color: #5A2A38;
   height: 3px;
   width: 20px;
   margin-top: 0.5rem;
@@ -187,8 +196,8 @@ ion-note {
 
 .cart-count {
   position: absolute;
-  background-color: #C9A96E;
-  color: #0C0C0C;
+  background-color: #C99A75;
+  color: #241419;
   border-radius: 500px;
   padding: 2px;
   width: 16px;
@@ -222,43 +231,216 @@ ion-note {
 
 .cart-count-pulse {
   animation: cartPulse 0.6s ease-in-out;
-  background-color: #E2C98A !important;
+  background-color: #FECAA2 !important;
 }
 
 .cart-icon-pulse {
   animation: cartIconBounce 0.6s ease-in-out;
 }
 
-/* ─── Gold Button ─── */
+/* ─── Primary CTA Button ─── */
 .btn-gold {
-  --background: #C9A96E;
-  --color: #0C0C0C;
-  --border-radius: 2px;
+  --background: #5A2A38;
+  --background-hover: #451E2A;
+  --background-activated: #401523;
+  --background-focused: #451E2A;
+  --color: #FBF8F5;
+  --color-hover: #FBF8F5;
+  --color-activated: #FBF8F5;
+  --ripple-color: rgba(251, 248, 245, 0.25);
+  --border-radius: 4px;
+  --box-shadow: none;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.75rem;
+  transition: filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-gold:hover {
+  box-shadow: 0 8px 20px -4px rgba(90, 42, 56, 0.22);
+}
+
+/* ─── Soft / secondary CTA ─── */
+.btn-soft {
+  --background: #F4ECE7;
+  --background-hover: #E8BEB7;
+  --background-activated: #E8BEB7;
+  --background-focused: #E8BEB7;
+  --color: #5A2A38;
+  --color-hover: #401523;
+  --color-activated: #401523;
+  --ripple-color: rgba(90, 42, 56, 0.12);
+  --border-radius: 6px;
+  --box-shadow: none;
+}
+
+/* ─── Global Ionic button hover (Sucre) ─── */
+ion-button {
+  --ripple-color: rgba(90, 42, 56, 0.14);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+/* Solid primary (default Ionic solid often inherits primary) */
+ion-button.button-solid:not(.button-clear):not(.button-outline) {
+  --background-hover: #451E2A;
+  --background-activated: #401523;
+  --background-focused: #451E2A;
+  --color-hover: #FBF8F5;
+  --color-activated: #FBF8F5;
+}
+
+/* Soft cream solid buttons (qty -, apply secondary, back-to-cart) */
+ion-button.sucre-soft,
+ion-button[style*="--background: #F4ECE7"],
+ion-button[style*="--background: #EFE7E1"] {
+  --background-hover: #E8BEB7 !important;
+  --background-activated: #E8BEB7 !important;
+  --background-focused: #E8BEB7 !important;
+  --color-hover: #401523 !important;
+  --color-activated: #401523 !important;
+  --ripple-color: rgba(90, 42, 56, 0.12);
+}
+
+/* Clear / icon buttons */
+ion-button.button-clear {
+  --background-hover: rgba(232, 190, 183, 0.22);
+  --background-activated: rgba(232, 190, 183, 0.32);
+  --background-focused: rgba(232, 190, 183, 0.22);
+  --color-hover: #401523;
+  --ripple-color: rgba(90, 42, 56, 0.1);
+}
+
+/* Native buttons used across the storefront */
+button.sucre-btn,
+.sucre-btn {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+}
+
+button.sucre-btn:hover,
+.sucre-btn:hover {
+  transform: translateY(-1px);
+}
+
+button.sucre-btn:active,
+.sucre-btn:active {
+  transform: scale(0.97);
+}
+
+button.sucre-btn-primary,
+.sucre-btn-primary {
+  background: #5A2A38;
+  color: #FBF8F5;
+  border: none;
+}
+
+button.sucre-btn-primary:hover,
+.sucre-btn-primary:hover {
+  background: #451E2A;
+  box-shadow: 0 8px 20px -4px rgba(90, 42, 56, 0.22);
+}
+
+button.sucre-btn-primary:active,
+.sucre-btn-primary:active {
+  background: #401523;
+}
+
+button.sucre-btn-soft,
+.sucre-btn-soft {
+  background: #F4ECE7;
+  color: #5A2A38;
+  border: 1px solid #EFE7E1;
+}
+
+button.sucre-btn-soft:hover,
+.sucre-btn-soft:hover {
+  background: #E8BEB7;
+  color: #401523;
+  border-color: #E8BEB7;
+}
+
+button.sucre-btn-chip,
+.sucre-btn-chip {
+  background: #FFFFFF;
+  color: #78676B;
+  border: 1px solid #EAE1DB;
+}
+
+button.sucre-btn-chip:hover,
+.sucre-btn-chip:hover {
+  background: rgba(232, 190, 183, 0.2);
+  color: #5A2A38;
+  border-color: #C99A75;
+}
+
+button.sucre-btn-chip.is-active,
+.sucre-btn-chip.is-active {
+  background: #5A2A38;
+  color: #FBF8F5;
+  border-color: #5A2A38;
+}
+
+button.sucre-btn-chip.is-active:hover,
+.sucre-btn-chip.is-active:hover {
+  background: #451E2A;
+  border-color: #451E2A;
+  color: #FBF8F5;
+}
+
+/* Filter / load-more outline buttons */
+button.sucre-btn-outline,
+.sucre-btn-outline {
+  background: transparent;
+  color: #5A2A38;
+  border: 1px solid #C99A75;
+}
+
+button.sucre-btn-outline:hover,
+.sucre-btn-outline:hover {
+  background: rgba(232, 190, 183, 0.18);
+  border-color: #5A2A38;
+}
+
+/* Suggested-card add button */
+button.sucre-add-btn {
+  background: #5A2A38;
+  border: none;
+  color: #FBF8F5;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+button.sucre-add-btn:hover {
+  background: #451E2A;
+  box-shadow: 0 6px 16px -2px rgba(90, 42, 56, 0.28);
+  transform: translateY(-1px);
+}
+
+button.sucre-add-btn:active {
+  background: #401523;
+  transform: scale(0.96);
 }
 
 /* ─── Divider ─── */
 .bellezza-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #C9A96E, transparent);
+  background: linear-gradient(90deg, transparent, #C99A75, transparent);
   margin: 1rem 0;
 }
 
-/* ─── Gold text ─── */
+/* ─── Accent text ─── */
 .gold {
-  color: #C9A96E !important;
+  color: #5A2A38 !important;
 }
 
 /* ─── Section headers ─── */
 .section-label {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 0.65rem;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #C9A96E;
+  color: #5A2A38;
+  font-weight: 600;
 }
 
 /* ─── Skeleton shimmer ─── */
@@ -270,27 +452,27 @@ ion-note {
 /* ─── About Us rich-text content ─── */
 .about-us-content strong,
 .about-us-content b {
-  color: #C9A96E;
+  color: #5A2A38;
   font-weight: 600;
 }
 .about-us-content em,
 .about-us-content i {
   font-style: italic;
-  color: #D4B98A;
+  color: #7C5636;
 }
 .about-us-content h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.15rem;
-  font-weight: 400;
-  color: #F5F0E8;
+  font-weight: 500;
+  color: #401523;
   margin: 0.75em 0 0.25em;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 .about-us-content h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
   font-weight: 400;
-  color: #D4C5AE;
+  color: #5A2A38;
   margin: 0.6em 0 0.2em;
 }
 .about-us-content p {
@@ -310,7 +492,7 @@ ion-note {
   margin: 0.15em 0;
 }
 .about-us-content a {
-  color: #C9A96E;
+  color: #5A2A38;
   text-decoration: underline;
 }
 .about-us-content u {

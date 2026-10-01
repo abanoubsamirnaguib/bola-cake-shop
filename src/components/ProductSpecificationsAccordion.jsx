@@ -158,30 +158,30 @@ export const ProductSpecificationsAccordion = ({ type, product }) => {
 
 				return (
 
-					<IonAccordion key={`accordion_${header}_${index}`} style={{ '--background': '#0C0C0C', '--border-color': '#2A2A2A' }}>
+					<IonAccordion key={`accordion_${header}_${index}`} style={{ '--background': '#FBF8F5', '--border-color': '#EFE7E1' }}>
 						<IonItem
 							slot="header"
 							lines="none"
-							style={{ '--background': '#151515', '--color': '#F5F0E8', marginBottom: '2px' }}
+							style={{ '--background': '#FFFFFF', '--color': '#241419', marginBottom: '2px' }}
 						>
-							<IonLabel style={{ fontFamily: "'Jost', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A96E' }}>
+							<IonLabel style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#5A2A38' }}>
 								{header}
 							</IonLabel>
 						</IonItem>
 
-						<IonList slot="content" style={{ '--background': '#0C0C0C', border: 'none' }}>
+						<IonList slot="content" style={{ '--background': '#FBF8F5', border: 'none' }}>
 							{options.map((option, index2) => {
 								const { label, value } = option;
 								return (
 									<IonItem
 										key={`accordion_${header}_${index2}`}
 										lines="none"
-										style={{ '--background': '#0C0C0C', '--color': '#F5F0E8', marginBottom: '2px' }}
+										style={{ '--background': '#FBF8F5', '--color': '#241419', marginBottom: '2px' }}
 									>
-										<IonLabel style={{ color: '#7A7A7A', fontSize: '0.8rem' }}>
+										<IonLabel style={{ color: '#78676B', fontSize: '0.8rem' }}>
 											{label}
 										</IonLabel>
-										<IonLabel slot="end" className={wrapText ? 'ion-text-wrap' : ''} style={{ color: '#F5F0E8', fontSize: '0.8rem', textAlign: 'right' }}>
+										<IonLabel slot="end" className={wrapText ? 'ion-text-wrap' : ''} style={{ color: '#241419', fontSize: '0.8rem', textAlign: 'right' }}>
 											{value}
 										</IonLabel>
 									</IonItem>

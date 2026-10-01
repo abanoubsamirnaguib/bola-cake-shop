@@ -1,35 +1,34 @@
-# Anfas — Luxury Perfume Store
+# Sucre Pâtisserie
 
-A luxury perfume e-commerce mobile app built with **Ionic 6** and **React**, powered by a **Laravel** REST API backend.  
-The UI features a dark, editorial aesthetic inspired by high-end fragrance boutiques. 
+Luxury pastry e-commerce mobile app built with **Ionic 6** and **React**, powered by a **Laravel** REST API.  
+Soft blush aesthetic for celebration cakes, French tarts, and artisanal macarons.
 
 ---
 
 ## Screenshot
 
-![Anfas app screenshot](/Anfas.png)
-
-_If the image does not appear, place the provided screenshot file at_ `assets/app-screenshot.png`.
+![Sucre Pâtisserie home](assets/stitch/home-screen.png)
 
 ---
 
 ## Features
 
 ### Storefront
-- **Category browsing** — Women, Men, Offers and any custom categories served from the backend
+- **Category browsing** — Celebration Cakes, French Tarts, Macaron Boxes, Offers (and any custom categories from the backend)
 - **Banner slider** — Full-width promotional slides managed from the admin panel
+- **Featured products** — Highlighted pastries on the home screen
 - **Product listing** — Paginated product grid with lazy loading
 - **Dynamic search** — Real-time search within any collection
-- **Product filtering** — Filter by attributes (size, type, etc.) via a slide-up modal
+- **Product filtering** — Filter by attributes (size, flavour, etc.) via a slide-up modal
 
 ### Product Detail
-- Rich product modal with image, price, description and fragrance notes
+- Rich product modal with image gallery, price, description and details
 - Size / attribute selector
 - Product reviews display
 - Specifications accordion
 
 ### Wishlist & Cart
-- **Wishlist** — Save favourite fragrances with persistent local state
+- **Wishlist** — Save favourite pastries with persistent local state
 - **Shopping bag** — Add, remove, increase / decrease quantity with swipe-to-delete
 - **Discount coupon** — Apply and validate promo codes against the backend
 - **Price breakdown** — Subtotal, discount line and final total
@@ -54,7 +53,7 @@ _If the image does not appear, place the provided screenshot file at_ `assets/ap
 | State Management | Pullstate |
 | Native Runtime | Capacitor 3 (iOS & Android) |
 | Styling | CSS Variables, SCSS Modules, `animate.css` |
-| Backend | Laravel 10 REST API |
+| Backend | Laravel 12 REST API |
 | Icons | Ionicons 6 |
 
 ---
@@ -74,8 +73,10 @@ src/
     Breadcrumbs.jsx
     LanguageToggle.jsx
   pages/
-    Categories.jsx          # Homepage — banner + category grid
+    Categories.jsx          # Homepage — banner + collections
     Category.jsx            # Product listing for a category
+    Product.jsx             # Product detail route
+    ProductType.jsx         # Product type listing
     Favourites.jsx          # Wishlist page
   services/
     api.js                  # All API calls (categories, products, orders, etc.)
@@ -86,8 +87,9 @@ src/
   i18n/
     index.js                # EN / AR translations + context provider
   theme/
-    variables.css           # Ionic CSS variable overrides
+    variables.css           # Sucre brand palette & Ionic overrides
 backend/                   # Laravel API (see backend/README.md)
+public/assets/pastry/      # Product & brand images
 ```
 
 ---
@@ -106,17 +108,30 @@ npm install
 ionic serve
 ```
 
+Or with Create React App:
+
+```bash
+npm start
+```
+
 ### Configure the API
 
-Edit [src/config.js](src/config.js) and set `API_BASE_URL` to point at your backend:
+Set the API URL in [`.env`](.env) (preferred) or edit [src/config.js](src/config.js):
+
+```env
+REACT_APP_API_URL=http://localhost:8000/api/v1
+```
 
 ```js
-export const API_BASE_URL = 'http://localhost:8000/api';
+export const API_BASE_URL =
+  process.env.REACT_APP_API_URL || 'http://localhost:8000/api/v1';
 ```
 
 ### Build for Production
 
 ```bash
+npm run build
+# or
 ionic build
 ```
 
@@ -133,6 +148,19 @@ npx cap open android  # opens Android Studio
 
 ## Backend
 
-The Laravel backend handles categories, products, orders, discount codes, WhatsApp message logging and an admin panel.  
-See [backend/README.md](backend/README.md) and [backend/API_INTEGRATION.md](backend/API_INTEGRATION.md) for full setup instructions.
-# bola-cake-shop
+The Laravel backend handles categories, products, orders, discount codes, WhatsApp message logging, settings, and an admin panel.
+
+```bash
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
+# configure DB in .env, then:
+php artisan migrate --seed
+npm install && npm run build
+php artisan serve
+```
+
+Default seeded admin: `admin@sucre.test` / `password`
+
+See [backend/README.md](backend/README.md) for more details.
