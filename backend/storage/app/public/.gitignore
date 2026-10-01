@@ -1,2 +1,4 @@
-*
-!.gitignore
+# Keep this folder tracked in git (uploaded media).
+# Ignore only OS junk if present.
+.DS_Store
+Thumbs.db
