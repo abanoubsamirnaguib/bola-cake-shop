@@ -2,17 +2,22 @@
     Options -MultiViews -Indexes
     RewriteEngine On
 
+    # Prefer the React build as the site index
+    DirectoryIndex build/index.html index.html
+
     # Keep backend API / admin out of the frontend rewrite
     RewriteRule ^backend(/|$) - [L]
 
-    # If the request already points at /build/..., leave it alone
+    # Homepage → React app
+    RewriteRule ^$ /build/index.html [L]
+
+    # Requests already under /build are handled by build/.htaccess
     RewriteRule ^build(/|$) - [L]
 
-    # Serve existing files/folders from the project root as-is
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
+    # Serve real files from the project root as-is
+    RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]
 
-    # Send everything else into the React production build
+    # Everything else → React build (assets + SPA routes)
     RewriteRule ^(.*)$ /build/$1 [L]
 </IfModule>
